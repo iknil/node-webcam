@@ -102,6 +102,11 @@ ImageSnapWebcam.prototype.list = function( callback ) {
 
     EXEC( sh, function( err, data, out ) {
 
+        if( err ) { 
+            callback && callback( err );
+            return;
+        }
+
         var lines = data.split( "\n" );
 
         var ll = lines.length;
@@ -123,7 +128,7 @@ ImageSnapWebcam.prototype.list = function( callback ) {
 
         }
 
-        callback && callback( cams );
+        callback && callback( null, cams );
 
     });
 

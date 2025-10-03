@@ -2,7 +2,6 @@
 const https = require('https');
 const fs = require('fs');
 const os = require( "os" );
-const config = require("../package.json");
 
 const tag = "v0.6";
 
@@ -18,7 +17,7 @@ function init() {
 	const file = fs.createWriteStream("src/bindings/CommandCam/CommandCam.exe");
 
 	//Github release url create
-	const repo = config.author.name + "/" + config.name;
+	const repo = "chuckfairy/node-webcam";
 	const url = "https://github.com/" + repo + "/releases/download/" + tag + "/CommandCam.exe";
 
 	//Download exe release

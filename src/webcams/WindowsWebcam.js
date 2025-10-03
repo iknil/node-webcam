@@ -95,7 +95,10 @@ WindowsWebcam.prototype.list = function( callback ) {
 
     EXEC( sh, function( err, data, out ) {
 
-        if( err ) { throw err; }
+        if( err ) { 
+            callback && callback( err );
+            return;
+        }
 
         var lines = out.split( "\n" );
 
@@ -121,7 +124,7 @@ WindowsWebcam.prototype.list = function( callback ) {
 
         }
 
-        callback && callback( cams );
+        callback && callback( null, cams );
 
     });
 
