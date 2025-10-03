@@ -96,7 +96,7 @@ WindowsWebcam.prototype.list = function( callback ) {
     EXEC( sh, function( err, data, out ) {
 
         if( err ) { 
-            callback && callback( err );
+            callback && callback( err, [] );
             return;
         }
 

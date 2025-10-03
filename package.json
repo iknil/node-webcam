@@ -1,6 +1,6 @@
 {
     "name": "node-webcam-modify",
-    "version": "0.8.3",
+    "version": "0.8.4",
     "description": "Cross platform webcam capture",
     "main": "index.js",
     "scripts": {
