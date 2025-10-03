@@ -49,7 +49,7 @@ export function capture(
 /**
  * Camera list helper
  */
-export function list(callback?: (err: Error | null, cams: string[]) => void): void;
+export function list(callback?: (err: ExecException | null, cams: string[]) => void): void;
 
 /**
  * Camera options helper
@@ -98,7 +98,7 @@ export class ImageSnapWebcam extends Webcam {
     /**
      * Webcam list
      */
-    override list(callback?: (error: Error | null, cams: string[]) => void): void;
+    override list(callback?: (error: ExecException | null, cams: string[]) => void): void;
 
     override runCaptureValidations(data: string): Error | null;
 }
@@ -176,7 +176,7 @@ export class WindowsWebcam extends Webcam {
      */
     override generateSh(location: string | null): string;
 
-    override list(callback?: (error: Error | null, cams: string[]) => void): void;
+    override list(callback?: (error: ExecException | null, cams: string[]) => void): void;
 
     override runCaptureValidations(data: string): Error | null;
 }
@@ -282,7 +282,7 @@ export abstract class Webcam {
     /**
      * List available cameras
      */
-    list(callback?: (error: Error | null, cams: string[]) => void): void;
+    list(callback?: (error: ExecException | null, cams: string[]) => void): void;
 
     /**
      * List available camera controls
